@@ -1,4 +1,4 @@
-
+--query project on adventure works
 
 SELECT * FROM Production.Product
 
@@ -8,7 +8,7 @@ WHERE Color IS NOT NULL
 AND (Color = 'Silver' OR Color = 'Black')
 AND Color = 'white'
 AND Color = 'Red'
-AND ListPrice BETWEEN £75 AND £750
+AND ListPrice BETWEEN Â£75 AND Â£750
 ORDER BY ListPrice DESC
 
 
@@ -84,7 +84,7 @@ FROM [Production].[WorkOrderRouting]
 
 SELECT ListPrice, Color
 FROM [Production].[Product]
-WHERE ListPrice < £200
+WHERE ListPrice < Â£200
 
 
 
@@ -150,9 +150,9 @@ Question 5
 
 Question 6
 --Create a list of product segmentation by defining criteria that places each item 
---in a predefined segment as follows. If price gets less than £200 then low value. 
---If price is between £201 and £750 then mid value.
---If between £750 and £1250 then mid to high value else higher value.
+--in a predefined segment as follows. If price gets less than Â£200 then low value. 
+--If price is between Â£201 and Â£750 then mid value.
+--If between Â£750 and Â£1250 then mid to high value else higher value.
 --Filter the results only for black, silver and red color products.
 
 
@@ -327,8 +327,8 @@ ON HRE.BusinessEntityID = SS.BusinessEntityID
 	STILL ON
 	Question 13
 --Question 13 Using adventure works, write a query to extract the following information.
---• Product name • Product category name • Product subcategory name • Sales person •
---Revenue • Month of transaction • Quarter of transaction • Region
+--Â• Product name Â• Product category name Â• Product subcategory name Â• Sales person Â•
+--Revenue Â• Month of transaction Â• Quarter of transaction Â• Region
 
  
 
