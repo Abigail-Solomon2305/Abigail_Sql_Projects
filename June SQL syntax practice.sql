@@ -4,7 +4,7 @@
 select distinct (department_id) from Employees 
 
 
---workers withthe highest salary
+--workers with the highest salary
 select top 10 salary from employees order by salary
 -- top syntax cannot return highest salary so try max
 select max (salary) as highest_sal from employees 
@@ -49,7 +49,7 @@ from staff as s
 	on e.emp_id = s.id
 		where e.salary > 60000 
 
---odd rows
+--odd rows, modulus will be employed
 SELECT * FROM employees WHERE emp_id % 2 <> 0;
 
 --even rows
@@ -93,7 +93,7 @@ FROM Employees
 		(SELECT id
 		FROM staff)
 
---31. Write an SQL query to show the current date and time.
+--query to show the current date and time.
 select getdate()
 
 --write an SQL query to show the top n (say 10) records of a table.
@@ -106,7 +106,7 @@ WHERE ROWNUM <= 10
 ORDER BY Salary DESC;
 
 
---Write an SQL query to determine the nth (say n=5) highest salary from a table.
+--query to determine the nth (say n=5) highest salary from a table.
 select * 
 from employees
 where salary in ( select top 5 salary from employees) 
@@ -160,16 +160,13 @@ from private_db.dbo.Employees
 order by salary asc
 
 
-Q-32. Write an SQL query to show the top n (say 10) records of a table.
+-- query to show the top n (say 10) records of a table.
 
 SELECT top 10 * 
 FROM staff
 order by salary desc
 
-
-
-
-Ans.Write an SQL query to determine the nth (say n=5) highest salary from a table.
+--to determine the nth (say n=5) highest salary from a table.
 
 SELECT top 5 * 
 FROM staff
@@ -202,7 +199,7 @@ WHERE n-1 = (
 
 
  
-Q-35. Write an SQL query to fetch the list of employees with the same salary.
+--query to fetch the list of employees with the same salary.
 select  salary, count (job_title)
 from staff
 group by salary 
@@ -222,14 +219,14 @@ where salary >
 --the average salary is 97331 for all 1000 staff members but those 
 --who receive higher than the average are 493 
 
-TASK 2
+-- code 2
 select CountryName, continent
 from country
 where CountryId in
 	(select DepartmentId
 	from department
 	)
-it returned the department that is also in another country
+--it returned the department that is also in another country
 
 --a better exmaple. i would like to know all workers who has received  a bonus
 select first_name, department
@@ -238,9 +235,9 @@ where worker_id in
 	(select worker_ref_id
 	from bonus
 	)
-only three workers has received a bonus
+--only three workers has received a bonus
 
---thabove result can also be achieved through a join
+--the above result can also be achieved through a join
 
 /*
 if you run this join without a distinct keyword, it will return multiple
