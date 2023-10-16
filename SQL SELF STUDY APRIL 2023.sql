@@ -11,9 +11,6 @@ datetrunc (year, start_date )
 FROM [dbo].[Staff]
 WHERE  TRIM([start_date]) = 2013
 -- you dont use the trim function on numeric data type
---Msg 8116, Level 16, State 1, Line 9
---Argument data type date is invalid for argument 1 of Trim function.
-
 
 SELECT DISTINCT start_date,
 datetrunc (year, start_date ) as year,
@@ -31,8 +28,10 @@ SUBSTRING
 
 --changes datatype
 CAST 
+	
 --finds the first non null record
 COALESCE
+	
 --how does the alter keyword change data type
 
 --creating foreign keys
@@ -43,7 +42,7 @@ REFERENCES [dbo].[company_regions] ([region_id])
 ON DELETE SET NULL
 
 --intitially when i ran the above query, it threw an error that the data types are differnt 
--- hence i Wd alter the table and change the data type
+-- hence i Would alter the table and change the data type
 
 ALTER TABLE [dbo].[Staff]
 ALTER COLUMN  [id] INT
@@ -76,7 +75,7 @@ UNION
 select [company_division] from [dbo].[CompDivs]
 
 --after creating some relationships, i decided to
---use thr QUERY DESIGNER to do some joins
+--use the QUERY DESIGNER in mssql to do some joins
 
 SELECT       SUM(Employees.salary) AS sumOFsalary, company_regions.company_regions, staff.department
 FROM            company_regions 
@@ -86,13 +85,6 @@ FROM            company_regions
 						HAVING       (SUM(Employees.salary) > 2010 - 01 - 01)
 						ORDER BY sumOFsalary DESC, company_regions.company_regions
 
-getdate
-dateadd
-TRIM
-SUBSTRING
-COALESCE
-CAST
-concat
 
 SELECT SUM(E.salary) AS Sum_of_salary, round(SUM(E.salary),2), CR.company_regions, S.department
 FROM company_regions CR
