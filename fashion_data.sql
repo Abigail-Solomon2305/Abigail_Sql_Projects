@@ -5,7 +5,7 @@ SELECT *
 FROM [dbo].[Womens_Clothing_E_Commerce_Reviews]
 
 --the steps i will take on this project will include
---clean, create joins, analyse, create visualisation
+--cleaning, creating joins, analyse, create visualisation
 --
 
 --checking for spaces leading and trailing spaces
