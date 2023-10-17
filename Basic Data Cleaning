@@ -1,9 +1,14 @@
-﻿select
+--DATA CLEANNG 
+-- popular operators used for cleaning data in sql
+
+--querying table to see all columns
+select
   *
 from
   data_sci.company_departments
 
 
+--changing department_name to uppercase
 select
   upper(department_name)
 from
@@ -11,6 +16,7 @@ from
 
 
 
+--changing department_name to just first letter having uppercase
 
 select
   initcap(department_name)
@@ -19,6 +25,7 @@ from
 
 
 
+--changing department_name to lowercase
 
 select
   lower(initcap(department_name))
@@ -27,45 +34,19 @@ from
 
 
 
-
-
-
-select
-  ‘ kelly’
-
-
-select
-  ‘ kelly’ = ‘kelly’
-
-
-
-
-select
-  ltrim(‘ kelly’)
-
-
-
-
+--removing white space from the left of a string
 select
   ltrim(‘ kelly’) = ‘kelly’
-
-
-
 
 select
   ltrim(‘ kelly  ’) = ‘kelly’
 
 
-
-
-
-
+--removing white space from the left of a string
 select
   rtrim(ltrim(‘ kelly  ’)) = ‘kelly’
 
-
-
-
+--the below are various ways you can bring to columns into oneor two separate strings into one word
 select
    job_title || last_name
 from
