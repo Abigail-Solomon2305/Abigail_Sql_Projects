@@ -4,10 +4,6 @@ from
   data_sci.company_departments
 
 
-
-
-
-
 select
   upper(department_name)
 from
