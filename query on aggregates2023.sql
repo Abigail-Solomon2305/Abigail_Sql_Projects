@@ -2,7 +2,7 @@ select * from  private.company_departments
 
 
 
---- Basic SQL Aggregation Commands
+--- Aggregation Operators in use
 
 select
 department_id, last_name, sum(salary)
@@ -15,13 +15,14 @@ select *
 from private.employees
 where job_title = 'structural engineer' 
 
-
+--querying for the first 10 rows in the employees table
 select
    *
 from 
-   data_sci.employees
+   private.employees
 limit 10;
 
+--fitering based on region_id that is equal to 2
 select
    *
 from 
@@ -29,21 +30,19 @@ from
 where
    region_id = 2;
 
-
-
+--doing a count on the employees table
 select
    count(*)
 from 
    private.employees;
 
-
-
+--summarising to see minimum, maximum and count of salary
 select
    count(*), min(salary), max(salary)
 from 
    private.employees;
   
-
+--summarising to see minimum, maximum and count of salary with a filter
 select
    count(*), min(salary), max(salary)
 from 
@@ -51,20 +50,17 @@ from
 where   
    region_id = 2;
 
-
+--summarising to see minimum, maximum and count of id
 select
    count(*), min(id), max(id)
 from 
 private.employees
 
---fetch alternate rows 
+--fetching alternate rows 
 select * 
 from private.company_departments
 where mod (cd_id , 2) = 0
 
---clone a table
-create new_table as  
---- Other Aggregates: Average, Variance and Standard Deviation
 
 --showing the details of the employee table 
 select
@@ -85,15 +81,16 @@ select
 from 
  private.employees;
  
- 
- select
+-- removing decimals with trunc
+select
    trunc( sum(salary))
 from
 private.employees
+	 
 -- showing the average total amount spent on salary for each department
 select
-	  department_id
-	  , sum(salary) as total_salary
+   department_id
+  , sum(salary) as total_salary
 from 
   private.employees
 group by department_id;
