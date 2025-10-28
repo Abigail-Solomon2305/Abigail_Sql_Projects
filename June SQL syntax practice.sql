@@ -174,10 +174,10 @@ order by salary desc
 
 
 --Write an SQL query to determine the 5th highest salary without using the TOP or limit method.
-to do this  a subquery is needed.
+/*to do this  a subquery is needed.
 it will be written in the where clause
 alias the tables in the inner query as tb2 and that in the outer query as tb1
-so, in the where clause you would 
+so, in the where clause you would*/
  
 SELECT Salary, id
 FROM staff W1
@@ -301,5 +301,6 @@ select  first_name
 
 
 	select count( case  when order_price > 1000 then 1 end) as important_orders from orders
+
 
 
